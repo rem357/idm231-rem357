@@ -21,7 +21,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #3B240B;
+    background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/Rug%2052433.jpg') no-repeat center center; /* Replace with your body background image */
+    background-size: cover;
+    
     
 }
 
@@ -38,7 +40,8 @@ h1 {
     gap: 15px; 
     width: 100%; 
     max-width: 800px;
-    background: radial-gradient(circle, #8B4513, #3B240B);
+    background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/NEW%20WALLPAPER%20copy.png') no-repeat center center; /* Replace with your body background image */
+    background-size: cover;
     padding: 20px;
     border-radius: 2px;
 }
