@@ -41,8 +41,16 @@ h1 {
     justify-content: center;
     align-items: center;
     border: 2px solid #3b8840;
+    overflow: hidden;
 }
-  
+
+.grid-item img {
+    width: fit-content;
+    height: fit-content;
+    object-fit: cover;
+    
+}
+
 
 .grid-item.center {
     grid-column: 2 / 5; 
