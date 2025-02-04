@@ -21,7 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/Rug%2052433.jpg') no-repeat center center; /* Replace with your body background image */
+    background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/Rug%2052433.jpg') no-repeat center center; 
     background-size: cover;
     
     
@@ -31,7 +31,7 @@ h1 {
     padding: 0%;
 }
 
-/* grid layout ------------------------------------------------------------------*/
+/* grid layout --------------------------------------------------------------------------------------------------------------------------------*/
 
 .grid-container {
     display: grid;
@@ -40,7 +40,7 @@ h1 {
     gap: 15px; 
     width: 100%; 
     max-width: 800px;
-    background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/NEW%20WALLPAPER%20copy.png') no-repeat center center; /* Replace with your body background image */
+    background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/vertical%20stripes.jpg') no-repeat center center;
     background-size: cover;
     padding: 20px;
     border-radius: 2px;
@@ -108,7 +108,7 @@ button:hover {
 
 
 
-/* help ------------------------------------------------------------------ */
+/* help -------------------------------------------------------------------------------------------------------------------------------------- */
 .help-container {
     width: 90%;
     max-width: 600px;
@@ -163,7 +163,7 @@ button:hover {
 
 
 
-/* results ------------------------------------------------------------------ */
+/* results -------------------------------------------------------------------------------------------------------------------------------------- */
 
 .results-container {
     width: 90%;
