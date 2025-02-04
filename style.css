@@ -24,7 +24,6 @@ body {
     background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/Rug%2052433.jpg') no-repeat center center; 
     background-size: cover;
     
-    
 }
 
 h1 {
@@ -109,6 +108,7 @@ button:hover {
 
 
 /* help -------------------------------------------------------------------------------------------------------------------------------------- */
+
 .help-container {
     width: 90%;
     max-width: 600px;
@@ -156,11 +156,26 @@ button:hover {
 }
 
 .help-footer button:hover {
-    background: #3e6740; /* slightly darker green */
+    background: #3e6740; 
 }
 
 
+/* mistletoe icon */
 
+.mistletoe-container {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    z-index: 1000;
+}
+
+.mistletoe {
+    max-width: 90px; 
+    height: auto;
+
+}
 
 
 /* results -------------------------------------------------------------------------------------------------------------------------------------- */
@@ -212,5 +227,5 @@ button:hover {
 }
 
 .results-footer button:hover {
-    background: #3e6740; /* slightly darker green */
+    background: #3e6740; 
 }
