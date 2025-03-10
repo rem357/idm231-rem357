@@ -92,7 +92,7 @@ function displayDayInfo(whichOne) {
       zDescriptionObj.innerHTML = "On the first day of Christmas my true love gave to me a partridge in a pear tree. 	The Partridge is a symbol of stability and protection, making those born under its sign natural caretakers. Just as the lone partridge remains steadfast in its tree, these individuals are grounded, reliable, and self-sufficient. However, their adaptability allows them to navigate change with grace. They are both the pillar of support for loved ones and the free spirit who can thrive in any environment. Their dual nature makes them excellent problem-solvers and mediators in times of conflict.";
       DisplayAreaObj.classList.add("showMe");
       DisplayAreaObj.classList.remove("hideMe");
-      playAudio("SOUND");
+      playAudio("day-1");
       break;
 
     case "Two Turtle Doves":
