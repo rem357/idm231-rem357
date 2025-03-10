@@ -8,38 +8,97 @@
 </head>
 <body>
 
-    <div class="mistletoe-container">
-        <img src="https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/mistletoe.png" alt="mistletoe" class="mistletoe">
-    </div>
-
     <div class="content-wrapper">
 
         <div class="grid-container">
-            <!-- 12 boxes -->
-            <div class="grid-item"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/1-1.png?raw=true" alt="1"></div>
-            <div class="grid-item"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/2-1.png?raw=true" alt="2"></div>
-            <div class="grid-item"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/3-1.png?raw=true" alt="3"></div>
-            <div class="grid-item"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/4-1.png?raw=true" alt="4"></div>
-            <div class="grid-item"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/5-1.png?raw=true" alt="5"></div>
-            <div class="grid-item"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/6-1.png?raw=true" alt="6"></div>
-            <div class="grid-item"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/7-1.png?raw=true" alt="7"></div>
-            <div class="grid-item"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/8-1.png?raw=true" alt="8"></div>
-            <div class="grid-item"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/9-1.png?raw=true" alt="9"></div>
-            <div class="grid-item"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/10-1.png?raw=true" alt="10"></div>
-            <div class="grid-item"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/11-1.png?raw=true" alt="11"></div>
-            <div class="grid-item"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/12-1.png?raw=true" alt="12"></div>
+            <!-- 12 buttons styled like divs -->
+            <button class="grid-item" id="A Partridge in a Pear Tree"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/1-1.png?raw=true" alt="1"></button>
+            <button class="grid-item" id="Two Turtle Doves"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/2-1.png?raw=true" alt="2"></button>
+            <button class="grid-item" id="Three French Hens"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/3-1.png?raw=true" alt="3"></button>
+            <button class="grid-item" id="Four Calling Birds"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/4-1.png?raw=true" alt="4"></button>
+            <button class="grid-item" id="FIVE GOLDEN RINGS!"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/5-1.png?raw=true" alt="5"></button>
+            <button class="grid-item" id="Six Geese a Laying"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/6-1.png?raw=true" alt="6"></button>
+            <button class="grid-item" id="Seven Swans a Swimming"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/7-1.png?raw=true" alt="7"></button>
+            <button class="grid-item" id="Eight Maids a Milking"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/8-1.png?raw=true" alt="8"></button>
+            <button class="grid-item" id="Nine Ladies Dancing"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/9-1.png?raw=true" alt="9"></button>
+            <button class="grid-item" id="Ten Lords a Leaping"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/10-1.png?raw=true" alt="10"></button>
+            <button class="grid-item" id="Eleven Pipers Piping"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/11-1.png?raw=true" alt="11"></button>
+            <button class="grid-item" id="Twelve Drummers Drumming"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/12-1.png?raw=true" alt="12"></button>
             
-            
-            <!-- center box -->
+
+        
+            <!-- Center box for input -->
             <div class="grid-item center">
                 <h1>Which of the Twelve Days of Christmas are You?</h1>
-                <label for="birthday">Enter Your Birthday:</label>
-                <input type="date" id="birthday" name="birthday">
-                <button type="submit">Submit</button>
+                <label for="zBirthday">Enter Your Birthday:</label>
+                <input type="date" id="zBirthday" name="zBirthday">
+                <button id="zSubmit">Submit</button>
             </div>
-
         </div>
     </div>
+
+    <!-- Display Area for Results -->
+    <div id="DisplayArea" class="hideMe">
+        <div class="content-wrapper">
+            <h2 id="zName">Day Name</h2>
+            <img id="zImage" src="media/placeholder.png" alt="Day Image">
+            <h4 id="zDateRange">Date</h4>
+            <p id="zDescription">Description of the day.</p>
+            <button id="CloseBtn">Close</button>
+        </div>
+    </div>
+
+    <!-- Audio Elements for Each Day -->
+    <audio id="SOUND" src="URL">
+        Sorry, your browser does not support HTML5 audio.
+    </audio>
+    
+    <audio id="SOUND" src="URL">
+        Sorry, your browser does not support HTML5 audio.
+    </audio>
+
+    <audio id="SOUND" src="URL">
+        Sorry, your browser does not support HTML5 audio.
+    </audio>
+
+    <audio id="SOUND" src="URL">
+        Sorry, your browser does not support HTML5 audio.
+    </audio>
+
+    <audio id="SOUND" src="URL">
+        Sorry, your browser does not support HTML5 audio.
+    </audio>
+
+    <audio id="SOUND" src="URL">
+        Sorry, your browser does not support HTML5 audio.
+    </audio>
+
+    <audio id="SOUND" src="URL">
+        Sorry, your browser does not support HTML5 audio.
+    </audio>
+
+    <audio id="SOUND" src="URL">
+        Sorry, your browser does not support HTML5 audio.
+    </audio>
+
+    <audio id="SOUND" src="URL">
+        Sorry, your browser does not support HTML5 audio.
+    </audio>
+
+    <audio id="SOUND" src="URL">
+        Sorry, your browser does not support HTML5 audio.
+    </audio>
+
+    <audio id="SOUND" src="URL">
+        Sorry, your browser does not support HTML5 audio.
+    </audio>
+
+    <audio id="SOUND" src="URL">
+        Sorry, your browser does not support HTML5 audio.
+    </audio>
+
+
+    <script defer src="postload.js"></script>
 
 </body>
 </html>

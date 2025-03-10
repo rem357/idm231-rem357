@@ -21,7 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/Rug%2052433.jpg') no-repeat center center; 
+    background: url('https://github.com/rem357/idm231-rem357/blob/main/other/vertical%20stripes.jpg?raw=true') no-repeat center center; 
     background-size: cover;
     
 }
@@ -37,9 +37,10 @@ h1 {
     grid-template-rows: repeat(3, 1fr); 
     grid-template-columns: repeat(5, 1fr); 
     gap: 15px; 
-    width: 100%; 
+    width: 1090px; 
+    height: 720px;
     max-width: 800px;
-    background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/vertical%20stripes.jpg') no-repeat center center;
+    background: url('https://github.com/rem357/idm231-rem357/blob/main/other/Rug%2052433.jpg?raw=true') no-repeat center center;
     background-size: cover;
     padding: 20px;
     border-radius: 2px;
@@ -47,20 +48,18 @@ h1 {
   
 
 .grid-item {
-    background: white;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #3b8840;
-    border-radius: 2px;
+    border-radius: 1px;
     overflow: hidden;
 }
 
 .grid-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    border-radius: 5px;
 }
 
 .content-wrapper {
@@ -71,16 +70,17 @@ transform-origin: top-center;
 .grid-item.center {
     grid-column: 2 / 5; 
     grid-row: 2; 
-    height: 200px;
-    width: 450px;
-    background: #FFE5B0;
-    color: rgb(0, 0, 0);
+    height: 240px;
+    width: 445px;
+    background: #325034;
+    color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     border-radius: 2px;
+    
 }
 
 .grid-item.center h1 {
@@ -89,6 +89,17 @@ transform-origin: top-center;
 }
 
 button {
+    margin-top: 5px;
+    padding: 5px 5px;
+    background-color: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#zSubmit {
     margin-top: 5px;
     padding: 5px 5px;
     background-color: #3b8840;
@@ -106,15 +117,16 @@ button:hover {
 
 
 .grid-item img {
-    width: 100%;
-    height: 100%;
+    width: 126px;
+    height: 200px;
+    scale: 1.05;
     object-fit: cover;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .grid-item img:hover {
     transform: scale(1.05); 
-    opacity: 0.8; 
+    opacity: 0.9; 
     border: 3px solid #325034; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -122,123 +134,128 @@ button:hover {
 
 /* help -------------------------------------------------------------------------------------------------------------------------------------- */
 
-.help-container {
-    width: 90%;
-    max-width: 600px;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    text-align: center;
-    border-radius: 2px;
-}
 
 
-.help-header {
-    background: #3b8840; 
-    color: white;
-    padding: 20px;
-}
 
-.help-header h1 {
-    margin: 0;
-    font-size: 1.8rem;
-}
-
-
-.help-content {
-    padding: 20px;
-    color: #333;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.help-footer {
-    padding: 10px;
-    background: #f0f0f0;
-}
-
-.help-footer button {
-    padding: 10px 20px;
-    background: #3b8840;
-    color: white;
-    border: none;
-    border-radius: 2px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.help-footer button:hover {
-    background: #3e6740; 
-}
-
-
-/* mistletoe help icon */
-
-.mistletoe-container {
-    width: 100%;
-    text-align: center;
+/* results display area -------------------------------------------------------------------------------------------------------------------------------------- */
+#DisplayArea {
     position: absolute;
-    top: 5px;
-    left: 0;
-    z-index: 1000;
-}
-
-.mistletoe {
-    max-width: 90px; 
-    height: auto;
-
-}
-
-
-/* results -------------------------------------------------------------------------------------------------------------------------------------- */
-
-.results-container {
-    width: 90%;
-    max-width: 600px;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9); /* Scaling fix */
+    width: 1090px;
+    height: 720px;
+    max-width: 800px;
+    background: url('https://github.com/rem357/idm231-rem357/blob/main/other/Rug%2052433.jpg?raw=true') no-repeat center center;
+    background-size: cover;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    border-radius: 2px;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevents content from escaping */
 }
 
+/* Content container inside DisplayArea */
+#DisplayArea .content-wrapper {
+    width: 100%; /* Matches DisplayArea width */
+    height: 100%; /* Matches DisplayArea height */
+    overflow-y: auto; /* Allows vertical scrolling if content is too long */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-.results-header {
-    background: #3b8840; 
+/* Ensure h2 stays within DisplayArea */
+#DisplayArea h2 {
+    margin: 10px;
+    max-width: 90%; /* Prevents stretching */
+    word-wrap: break-word; /* Ensures text doesn't overflow */
+    overflow-wrap: break-word;
+    text-align: center;
+    background: #325034;
     color: white;
-    padding: 20px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
-.results-header h1 {
-    margin: 0;
-    font-size: 1.8rem;
+/* Ensure h4 stays within DisplayArea */
+#DisplayArea h4 {
+    margin: 10px;
+    max-width: 90%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+    background: #325034;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Ensure p (paragraph) stays within DisplayArea */
+#DisplayArea p {
+    margin: 10px;
+    max-width: 90%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+    background: #325034;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Ensure images stay within DisplayArea */
+#DisplayArea img {
+    margin: 10px;
+    max-width: 90%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 
-.results-content {
-    padding: 20px;
-    color: #333;
-    font-size: 1rem;
-    line-height: 1.5;
+
+/* Ensure the image does not overflow */
+#DisplayArea img {
+    margin: 10px;
+    height: 350px;
+    width: auto;
+    object-fit: contain; /* Ensures image fits inside */
 }
 
-.results-footer {
-    padding: 10px;
-    background: #f0f0f0;
+
+/* Show Display Area when active */
+#DisplayArea.showMe {
+    opacity: 1;
+    visibility: visible;
 }
 
-.results-footer button {
+
+/* Close Button */
+#CloseBtn {
+    margin: 10px;
     padding: 10px 20px;
-    background: #3b8840;
-    color: white;
+    font-size: 1.2rem;
     border: none;
-    border-radius: 2px;
-    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background 0.3s ease;
+    background: #325034;
+    color: white;
+    border-radius: 5px;
+
 }
 
-.results-footer button:hover {
-    background: #3e6740; 
+#CloseBtn:hover {
+    background: #3b8840;
 }
