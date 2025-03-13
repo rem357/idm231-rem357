@@ -24,17 +24,41 @@
             <button class="grid-item" id="Ten Lords a Leaping"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/10-1.png?raw=true" alt="10"></button>
             <button class="grid-item" id="Eleven Pipers Piping"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/11-1.png?raw=true" alt="11"></button>
             <button class="grid-item" id="Twelve Drummers Drumming"><img src="https://github.com/rem357/idm231-rem357/blob/main/12%20images/12-1.png?raw=true" alt="12"></button>
-            
-
+        
         
             <!-- Center box for input -->
             <div class="grid-item center">
+                
                 <h1>Which of the Twelve Days of Christmas are You?</h1>
-                <label for="zBirthday">Enter Your Birthday:</label>
-                <input type="date" id="zBirthday" name="zBirthday">
-                <button id="zSubmit">Submit</button>
+                <label for="zBirthday" class="custom-label">Enter Your Birthday:</label>
+                <div class="custom-input-container">
+                    <input type="date" id="zBirthday" name="zBirthday" class="custom-input" required>
+                    <p id="error-message"></p> <!-- Error message stays inside the container -->
+                </div>
+                <button id="zSubmit" class="custom-button">Submit</button>
+                
+                <!-- Help Button -->
+                <button id="helpButton" class="help-btn">?</button>
+
+                <!-- Help Pop-up -->
+                <div id="helpPopup" class="popup hideMe">
+                    <div class="help-container">
+                        <header class="help-header">
+                            <h1>Need Help?</h1>
+                        </header>
+                        <main class="help-content">
+                            <p>Enter your birthday and click Submit to find out which day of Christmas you are, or click any icon to see more details.</p>
+                        </main>
+                        <footer class="help-footer">
+                            <button id="closeHelp" class="close-btn">Close</button>
+                        </footer>
+                    </div>
+                </div>
+
             </div>
+
         </div>
+
     </div>
 
     <!-- Display Area for Results -->
@@ -47,6 +71,9 @@
             <button id="CloseBtn">Close</button>
         </div>
     </div>
+
+
+
 
     <!-- Audio Elements for Each Day -->
     <audio id="day-1" src="snd/1-1.mp3">

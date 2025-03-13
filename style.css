@@ -28,27 +28,28 @@ body {
 
 h1 {
     padding: 0%;
+    color: #FFE5B0;
 }
 
 /* grid layout --------------------------------------------------------------------------------------------------------------------------------*/
 
-.grid-container {
+ .grid-container {
     display: grid;
-    grid-template-rows: repeat(3, 1fr); 
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 15px; 
+    grid-template-columns: repeat(5, 1fr); /* Ensure five equal columns */
+    grid-template-rows: repeat(3, auto); /* Automatically adjust row heights */
+    gap: 15px;
     width: 1090px; 
-    height: 720px;
+    height: auto; /* Adjust height dynamically */
     max-width: 800px;
     background: url('https://github.com/rem357/idm231-rem357/blob/main/other/Rug%2052433.jpg?raw=true') no-repeat center center;
     background-size: cover;
     padding: 20px;
     border-radius: 2px;
 }
-  
+
 
 .grid-item {
-    all: unset; /* Removes default button styles */
+    all: unset; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,7 +62,7 @@ h1 {
 .grid-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Prevents gaps */
+    object-fit: inherit; 
     display: block;
     border: none;
     padding: 0;
@@ -74,11 +75,9 @@ transform-origin: top-center;
 }
 
 .grid-item.center {
-    grid-column: 2 / 5; 
-    grid-row: 2; 
-    height: 240px;
-    width: 445px;
-    background: #325034;
+    grid-column: 2 / span 3; /* Spans the middle 3 columns */
+    grid-row: 2; /* Places it in the second row */
+    height: 189px; /* Matches the height of the surrounding grid items */
     color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
@@ -86,7 +85,9 @@ transform-origin: top-center;
     align-items: center;
     text-align: center;
     border-radius: 2px;
-    
+    padding: 20px;
+    position: relative;
+    width: auto; /* Remove fixed width */
 }
 
 .grid-item.center h1 {
@@ -95,9 +96,8 @@ transform-origin: top-center;
 }
 
 button {
-    margin-top: 5px;
-    padding: 5px 5px;
-    background-color: none;
+    width: 119.7px;
+    background-color: transparent;
     border-radius: 5px;
     font-size: 14px;
     cursor: pointer;
@@ -131,10 +131,209 @@ button:hover {
 
 .grid-item img:hover {
     transform: scale(1.05); 
-    opacity: 0.9; 
     border: 3px solid #325034; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
+/* Help Button */
+.help-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background: #3b8840;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.help-btn:hover {
+    background: #325034;
+}
+
+/* Help Pop-up */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show Pop-up */
+.popup.showMe {
+    opacity: 1;
+    visibility: visible;
+}
+
+.help-container {
+    padding: 20px;
+}
+
+.help-header h1 {
+    margin: 0;
+    font-size: 22px;
+    color: #3B240B;
+    text-transform: uppercase;
+}
+
+.help-content p {
+    font-size: 16px;
+    color: #3B240B;
+    margin-top: 10px;
+}
+
+.help-footer {
+    margin-top: 20px;
+}
+
+.close-btn {
+    padding: 8px 12px;
+    background: #3b8840;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.close-btn:hover {
+    background: #325034;
+}
+
+.popup-content h2 {
+    margin: 0 0 10px;
+}
+
+.popup-content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    padding: 5px 10px;
+    background: #325034;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Help Button - Circular '?' */
+.help-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: #3b8840;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.help-btn:hover {
+    background: #325034;
+}
+
+/* Adjust the center grid to make space for the button */
+.grid-item.center {
+    position: relative; /* Ensures positioning inside the center grid */
+    padding-bottom: 40px; /* Adds space at the bottom for the help button */
+}
+
+
+
+/* input button */
+
+/* Ensure the input and error message are stacked */
+.custom-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; 
+    width: 100%;
+    padding-bottom: 25px; 
+}
+
+/* Style the error message */
+#error-message {
+    color: rgb(163, 6, 6);
+    font-size: 14px;
+    margin-top: 2px;
+    text-align: center;
+    display: none;
+    width: 100%;
+    position: absolute;
+    bottom: -10px; 
+}
+
+
+/* Prevent users from typing invalid characters */
+.custom-input {
+    width: 200px;
+    padding: 10px 12px;
+    border: 2px solid #3b8840;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #FFE5B0;
+    color: #3B240B;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.custom-input:hover {
+    background-color: #FFD38D;
+}
+
+.custom-input:focus {
+    border-color: #325034;
+    background-color: white;
+}
+
+.custom-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.custom-button {
+    margin-top: 30px; 
+    padding: 8px 12px;
+    background-color: #3b8840;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #325034;
+}
+
+
 
 
 /* help -------------------------------------------------------------------------------------------------------------------------------------- */

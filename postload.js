@@ -213,60 +213,146 @@ CloseBtnObj.addEventListener("click", function () {
   }
 
 
+// Help Pop-up Logic
+const helpButton = document.getElementById("helpButton");
+const helpPopup = document.getElementById("helpPopup");
+const closeHelp = document.getElementById("closeHelp");
+
+helpButton.addEventListener("click", function () {
+    helpPopup.classList.add("showMe");
+});
+
+closeHelp.addEventListener("click", function () {
+    helpPopup.classList.remove("showMe");
+});
+
+
+
 
 
 // input date and submit code below
 const submitObj = document.getElementById("zSubmit");
 
+document.getElementById("zBirthday").addEventListener("input", function () {
+  let value = this.value;
+
+  // Ensure only 4 digits for the year (YYYY-MM-DD format)
+  let parts = value.split("-");
+  if (parts[0] && parts[0].length > 4) {
+      parts[0] = parts[0].slice(0, 4); // Trim the year to 4 digits
+      this.value = parts.join("-");
+  }
+});
+
+
 submitObj.addEventListener("click", function () {
     console.log("Submit button clicked on!");
 
     // Step one: Capture user input date
-    const birthDateObj = document.getElementById("zBirthday").valueAsDate;
+    const birthDateInput = document.getElementById("zBirthday");
+    const errorMessage = document.getElementById("error-message");
+    const displayArea = document.getElementById("DisplayArea");
+
+    if (!birthDateInput.value) {
+        showError("⚠ Please enter a valid date.");
+        return;
+    }
+
+    const birthDateObj = birthDateInput.valueAsDate;
     console.log("birthDateObj is " + birthDateObj);
 
-    // Step two: Make sure date is valid
-    if (birthDateObj) {
-        const tzOffSet = birthDateObj.getTimezoneOffset() * 60 * 1000;
-        console.log("tzOffSet is " + tzOffSet);
-        const birthDateEST = new Date(birthDateObj.getTime() + tzOffSet);
-        console.log("birthDateEST is " + birthDateEST);
-
-        // Extract month and day
-        const month = birthDateEST.getMonth() + 1;
-        const day = birthDateEST.getDate();
-        console.log("month is " + month + " day is " + day);
-
-        // Step three: Convert date to "12 Days of Christmas" day
-        let christmasDay = "";
-        if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
-            christmasDay = "Twelve Drummers Drumming";
-        } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
-            christmasDay = "Eleven Pipers Piping";
-        } else if ((month === 10 && day >= 24) || (month === 11 && day <= 21)) {
-            christmasDay = "Ten Lords a Leaping";
-        } else if ((month === 9 && day >= 23) || (month === 10 && day <= 23)) {
-            christmasDay = "Nine Ladies Dancing";
-        } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
-            christmasDay = "Eight Maids a Milking";
-        } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
-            christmasDay = "Seven Swans a Swimming";
-        } else if ((month === 6 && day >= 22) || (month === 7 && day <= 22)) {
-            christmasDay = "Six Geese a Laying";
-        } else if ((month === 5 && day >= 21) || (month === 6 && day <= 21)) {
-            christmasDay = "FIVE GOLDEN RINGS!";
-        } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
-            christmasDay = "Four Calling Birds";
-        } else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
-            christmasDay = "Three French Hens";
-        } else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
-            christmasDay = "Two Turtle Doves";
-        } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
-            christmasDay = "A Partridge in a Pear Tree";
-        }
-        
-        displayDayInfo(christmasDay); // Display result and trigger sound
-    } else {
-        alert("Please enter a valid date");
+    if (!birthDateObj) { 
+        showError("⚠ Please enter a valid date.");
+        return;
     }
+
+    const tzOffSet = birthDateObj.getTimezoneOffset() * 60 * 1000;
+    console.log("tzOffSet is " + tzOffSet);
+    const birthDateEST = new Date(birthDateObj.getTime() + tzOffSet);
+    console.log("birthDateEST is " + birthDateEST);
+
+    // Extract year, month, and day
+    const year = birthDateEST.getFullYear();
+    const month = birthDateEST.getMonth() + 1; // JS months are 0-based
+    const day = birthDateEST.getDate();
+    console.log("month is " + month + " day is " + day);
+
+    // ❌ Validation: Stop if the year is out of range
+    if (year < 1900 || year > 2025) {
+        showError("⚠ Year must be between 1900 and 2025.");
+        return;
+    }
+
+    // ❌ Validation: Stop if day is invalid for the month
+    if (month === 2 && day > 29) {
+        showError("⚠ February has max 29 days.");
+        return;
+    }
+    if ([4, 6, 9, 11].includes(month) && day > 30) {
+        showError(`⚠ This month only has 30 days.`);
+        return;
+    }
+
+    // ✅ If all checks pass, clear errors
+    errorMessage.textContent = "";
+    errorMessage.style.display = "none"; // Hide error message
+
+    // Step three: Convert date to "12 Days of Christmas" day
+    let christmasDay = "";
+    if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
+        christmasDay = "Twelve Drummers Drumming";
+    } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
+        christmasDay = "Eleven Pipers Piping";
+    } else if ((month === 10 && day >= 24) || (month === 11 && day <= 21)) {
+        christmasDay = "Ten Lords a Leaping";
+    } else if ((month === 9 && day >= 23) || (month === 10 && day <= 23)) {
+        christmasDay = "Nine Ladies Dancing";
+    } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
+        christmasDay = "Eight Maids a Milking";
+    } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
+        christmasDay = "Seven Swans a Swimming";
+    } else if ((month === 6 && day >= 22) || (month === 7 && day <= 22)) {
+        christmasDay = "Six Geese a Laying";
+    } else if ((month === 5 && day >= 21) || (month === 6 && day <= 21)) {
+        christmasDay = "FIVE GOLDEN RINGS!";
+    } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
+        christmasDay = "Four Calling Birds";
+    } else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
+        christmasDay = "Three French Hens";
+    } else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
+        christmasDay = "Two Turtle Doves";
+    } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
+        christmasDay = "A Partridge in a Pear Tree";
+    }
+
+    // ✅ **Now, we show the display only if the date is valid**
+    displayDayInfo(christmasDay);
 });
+
+// **Function to show an error, hide the display, and stop audio**
+function showError(message) {
+  const errorMessage = document.getElementById("error-message");
+  const birthDateInput = document.getElementById("zBirthday");
+  const displayArea = document.getElementById("DisplayArea");
+
+  errorMessage.textContent = message;
+  errorMessage.style.display = "block"; // Make sure the error message is visible
+  errorMessage.style.color = "red"; // Style it clearly
+
+  displayArea.classList.remove("showMe"); // Hide the display
+  stopAllAudio();
+
+  // ✅ Keep input field active so the user can fix their input
+  birthDateInput.focus();
+  birthDateInput.value = ""; // Reset the input field to allow re-entry
+}
+
+
+// **Function to stop all playing audio**
+function stopAllAudio() {
+    document.querySelectorAll("audio").forEach(audio => {
+        audio.pause();
+        audio.currentTime = 0;
+    });
+}
+
