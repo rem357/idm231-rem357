@@ -27,7 +27,7 @@ body {
 }
 
 h1 {
-    padding: 0%;
+    padding: 5px;
     color: #FFE5B0;
 }
 
@@ -41,7 +41,7 @@ h1 {
     width: 1090px; 
     height: auto; /* Adjust height dynamically */
     max-width: 800px;
-    background: url('https://github.com/rem357/idm231-rem357/blob/main/other/Rug%2052433%201.png?raw=true') no-repeat center center;
+    background: url('https://github.com/rem357/idm231-rem357/blob/main/other/plaid%20.png?raw=true') no-repeat center center;
     background-size: cover;
     padding: 20px;
     border-radius: 2px;
