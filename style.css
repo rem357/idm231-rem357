@@ -31,7 +31,7 @@ h1 {
     color: #FFE5B0;
 }
 
-/* grid layout --------------------------------------------------------------------------------------------------------------------------------*/
+/* grid layout -----------------------------------------------------------------------------------------------------------------------------------------*/
 
  .grid-container {
     display: grid;
@@ -119,12 +119,12 @@ button:hover {
 }
 
 .grid-item img:hover {
-    transform: scale(1.05); 
+    transform: scale(1.09); 
     border: 3px solid #325034; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* help -------------------------------------------------------------------------------------------------------------------------------------- */
+/* help ----------------------------------------------------------------------------------------------------------------------------------------------- */
 .help-btn {
     position: fixed;
     bottom: 20px;
@@ -147,8 +147,8 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 450px;
-    height: 220px;
+    width: auto;
+    height: auto;
     padding: 20px;
     background: #FFE5B0;
     border-radius: 10px;
@@ -160,7 +160,7 @@ button:hover {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Show Pop-up */
+
 .popup.showMe {
     opacity: 1;
     visibility: visible;
@@ -255,7 +255,7 @@ button:hover {
 }
 
 
-/* input button */
+/* input container -------------------------------------------------------------------------------------------------------------------------------------- */
 
 
 .custom-input-container {
@@ -369,9 +369,10 @@ footer a:hover {
     z-index: 9999;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
     box-sizing: border-box;
     overflow: hidden; 
+    
+    
 }
 
 
@@ -429,7 +430,7 @@ footer a:hover {
 
 #DisplayArea img {
     margin: 10px;
-    height: 300px;
+    height: 220px;
     width: auto;
     object-fit: contain; 
     border: 5px solid #325034; 
