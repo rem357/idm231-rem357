@@ -1,4 +1,4 @@
-/* colors used 
+/* colors  
 
 #3b8840 - green
 #325034 - hover green
@@ -35,11 +35,11 @@ h1 {
 
  .grid-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Ensure five equal columns */
-    grid-template-rows: repeat(3, auto); /* Automatically adjust row heights */
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, auto);
     gap: 15px;
     width: 1090px; 
-    height: auto; /* Adjust height dynamically */
+    height: auto; 
     max-width: 800px;
     background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/other/plaid-background.webp') no-repeat center center;
     background-size: cover;
@@ -59,20 +59,10 @@ h1 {
     margin: 0;
 }
 
-.grid-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: inherit; 
-    display: block;
-    border: none;
-    padding: 0;
-    margin: 0;
-}
-
 .content-wrapper {
 transform: scale(0.9);
 transform-origin: top-center;
-background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/other/flower-background.webp') no-repeat center center;') no-repeat center center;
+background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/other/flower-background.webp') no-repeat center center;
 }
 
 .grid-item.center {
@@ -86,7 +76,6 @@ background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/hea
     align-items: center;
     text-align: center;
     border-radius: 2px;
-    padding: 20px;
     position: relative;
     width: auto; 
 }
@@ -123,11 +112,10 @@ button:hover {
 
 
 .grid-item img {
-    width: 126px;
-    height: 200px;
-    scale: 1.05;
-    object-fit: cover;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+    display: block;
 }
 
 .grid-item img:hover {
@@ -136,7 +124,7 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Help Button */
+/* help -------------------------------------------------------------------------------------------------------------------------------------- */
 .help-btn {
     position: fixed;
     bottom: 20px;
@@ -154,7 +142,6 @@ button:hover {
     background: #325034;
 }
 
-/* Help Pop-up */
 .popup {
     position: fixed;
     top: 50%;
@@ -268,13 +255,6 @@ button:hover {
 }
 
 
-.grid-item.center {
-    position: relative; 
-    padding-bottom: 40px; 
-}
-
-
-
 /* input button */
 
 
@@ -369,19 +349,14 @@ footer a:hover {
 }
 
 
-/* help -------------------------------------------------------------------------------------------------------------------------------------- */
-
-
-
-
 /* results display area -------------------------------------------------------------------------------------------------------------------------------------- */
 #DisplayArea {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.9); /* Scaling fix */
-    width: 1090px;
-    height: 720px;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 1090px; 
+    height: auto; 
     max-width: 800px;
     background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/other/plaid-background.webp') no-repeat center center;
     background-size: cover;
@@ -396,7 +371,7 @@ footer a:hover {
     visibility: hidden;
     transition: opacity 0.5s ease, visibility 0.5s ease;
     box-sizing: border-box;
-    overflow: hidden; /* Prevents content from escaping */
+    overflow: hidden; 
 }
 
 
