@@ -21,7 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/other/kht8mqgol3cktobmwbf7.webp') no-repeat center center; 
+    background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/other/striped-background.webp') no-repeat center center; 
     background-size: cover;
     
 }
@@ -41,7 +41,7 @@ h1 {
     width: 1090px; 
     height: auto; /* Adjust height dynamically */
     max-width: 800px;
-    background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/other/yythn5cufsp1d1cpdqho.webp') no-repeat center center;
+    background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/other/plaid-background.webp') no-repeat center center;
     background-size: cover;
     padding: 20px;
     border-radius: 2px;
@@ -72,7 +72,7 @@ h1 {
 .content-wrapper {
 transform: scale(0.9);
 transform-origin: top-center;
-background-color: #FFE5B0;
+background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/other/flower-background.webp') no-repeat center center;') no-repeat center center;
 }
 
 .grid-item.center {
@@ -383,7 +383,7 @@ footer a:hover {
     width: 1090px;
     height: 720px;
     max-width: 800px;
-    background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/other/yythn5cufsp1d1cpdqho.webp') no-repeat center center;
+    background: url('https://raw.githubusercontent.com/rem357/idm231-rem357/refs/heads/main/other/plaid-background.webp') no-repeat center center;
     background-size: cover;
     border-radius: 2px;
     display: flex;
