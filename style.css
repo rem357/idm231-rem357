@@ -21,7 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('https://github.com/rem357/idm231-rem357/blob/main/other/vertical%20stripes.jpg?raw=true') no-repeat center center; 
+    background: url('https://github.com/rem357/idm231-rem357/blob/main/other/stripped-wallpaper-min.png?raw=true') no-repeat center center; 
     background-size: cover;
     
 }
@@ -72,12 +72,13 @@ h1 {
 .content-wrapper {
 transform: scale(0.9);
 transform-origin: top-center;
+background-color: #FFE5B0;
 }
 
 .grid-item.center {
-    grid-column: 2 / span 3; /* Spans the middle 3 columns */
-    grid-row: 2; /* Places it in the second row */
-    height: 189px; /* Matches the height of the surrounding grid items */
+    grid-column: 2 / span 3; 
+    grid-row: 2; 
+    height: 189px; 
     color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
@@ -87,7 +88,7 @@ transform-origin: top-center;
     border-radius: 2px;
     padding: 20px;
     position: relative;
-    width: auto; /* Remove fixed width */
+    width: auto; 
 }
 
 .grid-item.center h1 {
@@ -159,9 +160,10 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px;
+    width: 450px;
+    height: 220px;
     padding: 20px;
-    background: white;
+    background: #FFE5B0;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
@@ -195,18 +197,30 @@ button:hover {
 }
 
 .help-footer {
-    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    align-items: center;
+    width: 100%;
+    margin-top: 15px; /* Space above the button */
+    position: relative; /* Ensures proper positioning */
 }
 
 .close-btn {
-    padding: 8px 12px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Moves button to center */
+    padding: 8px 20px;
     background: #3b8840;
     color: white;
     border: none;
+    margin-top: 20px;
     border-radius: 5px;
-    cursor: pointer;
     font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    width: auto; /* Adjusts width to fit content */
 }
+
 
 .close-btn:hover {
     background: #325034;
@@ -230,7 +244,6 @@ button:hover {
     cursor: pointer;
 }
 
-/* Help Button - Circular '?' */
 .help-btn {
     position: absolute;
     bottom: 10px;
@@ -254,17 +267,17 @@ button:hover {
     background: #325034;
 }
 
-/* Adjust the center grid to make space for the button */
+
 .grid-item.center {
-    position: relative; /* Ensures positioning inside the center grid */
-    padding-bottom: 40px; /* Adds space at the bottom for the help button */
+    position: relative; 
+    padding-bottom: 40px; 
 }
 
 
 
 /* input button */
 
-/* Ensure the input and error message are stacked */
+
 .custom-input-container {
     display: flex;
     flex-direction: column;
@@ -274,7 +287,6 @@ button:hover {
     padding-bottom: 25px; 
 }
 
-/* Style the error message */
 #error-message {
     color: rgb(163, 6, 6);
     font-size: 14px;
@@ -286,8 +298,6 @@ button:hover {
     bottom: -10px; 
 }
 
-
-/* Prevent users from typing invalid characters */
 .custom-input {
     width: 200px;
     padding: 10px 12px;
@@ -310,7 +320,7 @@ button:hover {
 }
 
 .custom-label {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
     color: white;
     margin-bottom: 5px;
@@ -340,8 +350,8 @@ footer {
     width: 100%;
     font-size: 10px;
     text-align: center;
-    color: #325034; /* Subtle gray text */
-    background: none; /* Transparent background */
+    color: #325034; 
+    background: none; 
     padding: 2px;
 }
 
@@ -389,7 +399,7 @@ footer a:hover {
     overflow: hidden; /* Prevents content from escaping */
 }
 
-/* Content container inside DisplayArea */
+
 #DisplayArea .content-wrapper {
     width: 100%; /* Matches DisplayArea width */
     height: 100%; /* Matches DisplayArea height */
@@ -401,20 +411,20 @@ footer a:hover {
     align-items: center;
 }
 
-/* Ensure h2 stays within DisplayArea */
+
 #DisplayArea h2 {
     margin: 10px;
-    max-width: 90%; /* Prevents stretching */
-    word-wrap: break-word; /* Ensures text doesn't overflow */
+    max-width: 90%;
+    word-wrap: break-word; 
     overflow-wrap: break-word;
     text-align: center;
     background: #325034;
     color: white;
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
 }
 
-/* Ensure h4 stays within DisplayArea */
+
 #DisplayArea h4 {
     margin: 10px;
     max-width: 90%;
@@ -423,11 +433,10 @@ footer a:hover {
     text-align: center;
     background: #325034;
     color: white;
-    padding: 5px;
+    padding: 1dvh;
     border-radius: 5px;
 }
 
-/* Ensure p (paragraph) stays within DisplayArea */
 #DisplayArea p {
     margin: 10px;
     max-width: 90%;
@@ -435,41 +444,31 @@ footer a:hover {
     overflow-wrap: break-word;
     text-align: center;
     background: #325034;
+    font-size: 16px;
     color: white;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-/* Ensure images stay within DisplayArea */
-#DisplayArea img {
-    margin: 10px;
-    max-width: 90%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    text-align: center;
-    padding: 5px;
+    padding: 20px;
     border-radius: 5px;
 }
 
 
 
-/* Ensure the image does not overflow */
 #DisplayArea img {
     margin: 10px;
-    height: 350px;
+    height: 300px;
     width: auto;
-    object-fit: contain; /* Ensures image fits inside */
+    object-fit: contain; 
+    border: 5px solid #325034; 
+    border-radius: 5px; 
+
 }
 
 
-/* Show Display Area when active */
 #DisplayArea.showMe {
     opacity: 1;
     visibility: visible;
 }
 
 
-/* Close Button */
 #CloseBtn {
     margin: 10px;
     padding: 10px 20px;
