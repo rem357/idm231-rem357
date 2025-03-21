@@ -1,3 +1,6 @@
+
+
+
 // Store HTML objects into JS variables/objects
 const Day1Obj = document.getElementById("A-Partridge-in-a-Pear-Tree");
 const Day2Obj = document.getElementById("Two-Turtle-Doves");
@@ -187,16 +190,19 @@ function displayDayInfo(whichOne) {
       console.log("ERROR: INVALID DAY!");
   }
   // 🎯 **Fix the Display Issue**
-  DisplayAreaObj.classList.add("showMe"); // Apply the CSS class to show the popup
-  DisplayAreaObj.style.opacity = "1"; // Ensure visibility
+  DisplayAreaObj.classList.add("showMe");
+  DisplayAreaObj.style.opacity = "1"; 
   DisplayAreaObj.style.visibility = "visible";
 }
 
+
+
+
 // Close button functionality
 CloseBtnObj.addEventListener("click", function () {
-  DisplayAreaObj.classList.remove("showMe"); // Hide the popup
-  DisplayAreaObj.style.opacity = "0"; // Hide smoothly
-  DisplayAreaObj.style.visibility = "hidden"; // Fully remove from view
+  DisplayAreaObj.classList.remove("showMe"); 
+  DisplayAreaObj.style.opacity = "0"; 
+  DisplayAreaObj.style.visibility = "hidden";
 });
 
 
@@ -207,13 +213,16 @@ CloseBtnObj.addEventListener("click", function () {
   function playAudio(whichSound) {
     allAudios.forEach((thisAudio) => {
       thisAudio.pause();
-      thisAudio.currentTime = 0; // Reset sound file back to start
+      thisAudio.currentTime = 0; 
     });
     document.getElementById(whichSound).play();
   }
 
 
-// Help Pop-up Logic
+
+
+
+// help pop-up
 const helpButton = document.getElementById("helpButton");
 const helpPopup = document.getElementById("helpPopup");
 const closeHelp = document.getElementById("closeHelp");
@@ -235,18 +244,19 @@ const submitObj = document.getElementById("zSubmit");
 
 document.getElementById("zBirthday").addEventListener("input", function () {
   let value = this.value;
-
-  // Ensure only 4 digits for the year (YYYY-MM-DD format)
-  let parts = value.split("-");
-  if (parts[0] && parts[0].length > 4) {
-      parts[0] = parts[0].slice(0, 4); // Trim the year to 4 digits
-      this.value = parts.join("-");
-  }
+    // make sure only 4 digits for the year 
+    let parts = value.split("-");
+    if (parts[0] && parts[0].length > 4) {
+        parts[0] = parts[0].slice(0, 4); 
+        this.value = parts.join("-");
+    }
 });
 
 
 submitObj.addEventListener("click", function () {
     console.log("Submit button clicked on!");
+
+
 
     // Step one: Capture user input date
     const birthDateInput = document.getElementById("zBirthday");
@@ -271,19 +281,19 @@ submitObj.addEventListener("click", function () {
     const birthDateEST = new Date(birthDateObj.getTime() + tzOffSet);
     console.log("birthDateEST is " + birthDateEST);
 
-    // Extract year, month, and day
+    // step two: extract year, month, and day
     const year = birthDateEST.getFullYear();
-    const month = birthDateEST.getMonth() + 1; // JS months are 0-based
+    const month = birthDateEST.getMonth() + 1; 
     const day = birthDateEST.getDate();
     console.log("month is " + month + " day is " + day);
 
-    // ❌ Validation: Stop if the year is out of range
+    // stop if the year is out of range
     if (year < 1900 || year > 2025) {
         showError("⚠ Year must be between 1900 and 2025.");
         return;
     }
 
-    // ❌ Validation: Stop if day is invalid for the month
+    //  stop if day is invalid for the month
     if (month === 2 && day > 29) {
         showError("⚠ February has max 29 days.");
         return;
@@ -293,11 +303,11 @@ submitObj.addEventListener("click", function () {
         return;
     }
 
-    // ✅ If all checks pass, clear errors
+    // clear errors
     errorMessage.textContent = "";
-    errorMessage.style.display = "none"; // Hide error message
+    errorMessage.style.display = "none"; 
 
-    // Step three: Convert date to "12 Days of Christmas" day
+    // Step three: Convert date 
     let christmasDay = "";
     if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
         christmasDay = "Twelve-Drummers-Drumming";
@@ -325,34 +335,32 @@ submitObj.addEventListener("click", function () {
         christmasDay = "A-Partridge-in-a-Pear-Tree";
     }
 
-    // ✅ **Now, we show the display only if the date is valid**
     displayDayInfo(christmasDay);
 });
 
-// **Function to show an error, hide the display, and stop audio**
+// show an error, hide the display, and stop audio
 function showError(message) {
   const errorMessage = document.getElementById("error-message");
   const birthDateInput = document.getElementById("zBirthday");
   const displayArea = document.getElementById("DisplayArea");
 
   errorMessage.textContent = message;
-  errorMessage.style.display = "block"; // Make sure the error message is visible
-  errorMessage.style.color = "red"; // Style it clearly
+  errorMessage.style.display = "block"; 
+  errorMessage.style.color = "red"; 
 
-  displayArea.classList.remove("showMe"); // Hide the display
+  displayArea.classList.remove("showMe"); 
   stopAllAudio();
 
-  // ✅ Keep input field active so the user can fix their input
+  // keep input field active 
   birthDateInput.focus();
-  birthDateInput.value = ""; // Reset the input field to allow re-entry
-}
+  birthDateInput.value = ""; 
 
 
-// **Function to stop all playing audio**
+// stop all playing audio**
 function stopAllAudio() {
     document.querySelectorAll("audio").forEach(audio => {
         audio.pause();
         audio.currentTime = 0;
     });
 }
-
+}
